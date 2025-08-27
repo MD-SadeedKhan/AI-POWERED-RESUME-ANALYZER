@@ -1,0 +1,32 @@
+# render.yaml for AI-Powered Resume Analyzer Backend
+services:
+  - type: web
+    name: ai-resume-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    autoDeploy: true
+    branch: main
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: UPLOAD_FOLDER
+        value: "/persistent/uploads"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ENVIRONMENT
+        value: "production"
+      - key: LOG_LEVEL
+        value: "INFO"
+    mounts:
+      - type: persistent
+        name: uploads
+        path: /persistent/uploads
+
+  - type: postgresql
+    name: ai-resume-db
+    plan: free
+    region: oregon
+    version: 17
