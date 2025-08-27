@@ -1,0 +1,34 @@
+name: ai-resume-analyzer
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - conda-forge::faiss-cpu=1.8.0
+  - conda-forge::shap=0.46.0
+  - conda-forge::numpy
+  - pip:
+      - fastapi==0.111.1
+      - uvicorn[standard]==0.30.3
+      - python-multipart==0.0.9
+      - pydantic==2.8.2
+      - sqlalchemy==2.0.31
+      - alembic==1.13.2
+      - psycopg2-binary==2.9.9
+      - requests==2.32.3
+      - python-dotenv==1.0.1
+      - loguru==0.7.2
+      - black==24.8.0
+      - pytest==8.3.2
+      - google-generativeai==0.7.2
+      - pandas==2.2.2
+      - scikit-learn==1.5.1
+      - joblib==1.4.2
+      - PyPDF2==3.0.1
+      - spacy==3.8.7
+      - python-docx==1.1.2
+      - pdfplumber==0.11.2
+      - transformers==4.38.0
+      - sentence-transformers==2.2.2
+      - langchain==0.1.0
