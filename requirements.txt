@@ -27,3 +27,5 @@ grpcio==1.62.2
 grpcio-status==1.62.2
 google-api-core==2.25.1
 google-auth==2.40.3
+sentence-transformers==2.7.0
+torch>=2.0.0,<3.0.0
